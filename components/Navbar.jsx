@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import { Navlinks } from './Navlinks'
 
 const links = [
   { name: 'Home', path: '/' },
@@ -13,25 +14,32 @@ const links = [
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   return (
-    <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-42'>
+    <div className='h-full  flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-42 '>
       {/* logo */}
-      <div className='hidden md:flex gap-6'>
-        {links.map(({ name, path }) => {
+      <div className='hidden md:flex lg:flex gap-6 w-1/3  '>
+        {links.map((link) => {
           return (
-            <Link key={name} href={path} >
-              <span className='text-white'>{name}</span>
-            </Link>
+            <Navlinks link={link} key={link.title}/>
           )
         })
-
         }
       </div>
       {/* this is for social media  */}
-      <div>
+      <div className='hidden md:flex gap-4 w-1/3'>
         <Link href="#">
           <Image src="/github.png" width={24} height={24} />
         </Link>
+        <Link href="#">
+          <Image src="/instagram.png" width={24} height={24} />
+        </Link>
+        <Link href="#">
+          <Image src="/linkedin.png" width={24} height={24} />
+        </Link>
+        <Link href="#">
+          <Image src="/facebook.png" width={24} height={24} />
+        </Link>
       </div>
+      {/* logo */}
       <div className='md:hidden'>
         <Link href="/" className='text-sm bg-black rounded-md  font-semibold mr-1 flex items-center px-2 py-1'>
           <span className='text-white'>Deepak</span>
@@ -60,8 +68,7 @@ export const Navbar = () => {
 
 
       </div>
-      {/* right part */}
-      <div>2</div>
+
     </div>
   )
 }
