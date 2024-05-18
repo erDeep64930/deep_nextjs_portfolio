@@ -7,7 +7,7 @@ import { Navlinks } from './Navlinks'
 const links = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
-  { name: 'Portfolio', path: 'portfolio' },
+  { name: 'Portfolio', path: '/portfolio' },
   { name: 'Contact', path: '/contact' },
 ]
 
@@ -19,7 +19,7 @@ export const Navbar = () => {
       <div className='hidden md:flex lg:flex gap-6 w-1/3  '>
         {links.map((link) => {
           return (
-            <Navlinks link={link} key={link.title}/>
+            <Navlinks link={link} key={link.title} />
           )
         })
         }

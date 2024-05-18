@@ -1,8 +1,9 @@
 import React from 'react'
 
-export  const Portfolio = () => {
+const page = () => {
   return (
-   <div>Portfoliopage</div>
+    <div>Portfoliopage</div>
   )
 }
 
+export default page
